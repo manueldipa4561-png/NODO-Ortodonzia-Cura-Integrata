@@ -1,0 +1,29 @@
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+
+[[redirects]]
+  from = "/trattamenti"
+  to = "/trattamenti.html"
+  status = 200
+
+[[redirects]]
+  from = "/prima-visita"
+  to = "/prima-visita.html"
+  status = 200
+
+[[redirects]]
+  from = "/studio"
+  to = "/studio.html"
+  status = 200
+
+[[redirects]]
+  from = "/richiedi-incontro"
+  to = "/richiedi-incontro.html"
+  status = 200

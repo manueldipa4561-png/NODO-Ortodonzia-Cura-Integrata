@@ -263,9 +263,13 @@ main{
 }
 .treatment-card:nth-child(2){
   background:
-    radial-gradient(circle at 75% 18%,rgba(239,244,239,.16),transparent 28%),
-    linear-gradient(155deg,#66786c 0%,#3e5147 100%);
+    radial-gradient(circle at 75% 18%,rgba(239,244,239,.14),transparent 28%),
+    linear-gradient(155deg,#52675b 0%,#34473d 100%);
   color:#f3efe7;
+}
+.treatment-card:nth-child(2) p,
+.treatment-card:nth-child(2) .micro{
+  opacity:1;
 }
 .treatment-card:nth-child(3){
   background:
@@ -478,8 +482,13 @@ main{
   color:#f1ede4;
   font-size:clamp(80px,9.4vw,164px);
 }
+.footer h3,
 .footer h4{
   color:#8f9b93;
+  font:500 9px/1 var(--mono);
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  margin:0 0 18px;
 }
 .footer a,
 .footer p{

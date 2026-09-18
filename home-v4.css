@@ -1,0 +1,697 @@
+/* NODO — Homepage Visual System V4 / Relational Editorial
+   Page-scoped layer: visual + typographic refinement only.
+   Keeps content, routes, healthcare-safe language and existing interactions unchanged. */
+
+:root{
+  --nodo-paper:#f1ede4;
+  --nodo-paper-2:#e7e1d6;
+  --nodo-ink:#141916;
+  --nodo-graphite:#3f4943;
+  --nodo-sage:#7c8d82;
+  --nodo-sage-soft:#cfd8d0;
+  --nodo-sage-deep:#26362f;
+  --nodo-coral:#df6e5a;
+  --nodo-night:#0d1411;
+  --nodo-night-2:#17231e;
+  --nodo-line:rgba(20,25,22,.14);
+  --nodo-radius:26px;
+}
+
+/* Global page rhythm */
+body{
+  background:var(--nodo-paper);
+  color:var(--nodo-ink);
+}
+main{
+  overflow:hidden;
+}
+.section,
+.signature,
+.closing{
+  position:relative;
+}
+.section h2,
+.signature h2,
+.closing h2{
+  text-wrap:balance;
+}
+.section p,
+.signature p,
+.closing p{
+  text-wrap:pretty;
+}
+.micro{
+  letter-spacing:.15em;
+}
+.arrow-link{
+  transition:opacity .25s ease,transform .25s ease;
+}
+.arrow-link:hover,
+.arrow-link:focus-visible{
+  opacity:.72;
+  transform:translateX(2px);
+}
+
+/* 01 / Approach — quiet editorial reset after the hero */
+#approccio{
+  background:
+    radial-gradient(circle at 88% 18%,rgba(124,141,130,.16),transparent 23%),
+    linear-gradient(180deg,var(--nodo-paper) 0%,#ece6da 100%);
+  padding-top:clamp(110px,13vw,205px);
+  padding-bottom:clamp(118px,14vw,220px);
+}
+#approccio:before{
+  content:"";
+  position:absolute;
+  width:clamp(170px,19vw,310px);
+  aspect-ratio:1;
+  right:clamp(-115px,-5vw,-42px);
+  bottom:clamp(32px,6vw,90px);
+  border:1px solid rgba(38,54,47,.13);
+  border-radius:50%;
+  box-shadow:
+    0 0 0 38px rgba(38,54,47,.025),
+    0 0 0 82px rgba(38,54,47,.016);
+  pointer-events:none;
+}
+.manifesto-grid{
+  grid-template-columns:minmax(0,1.25fr) minmax(300px,.55fr);
+  gap:clamp(56px,10vw,170px);
+  align-items:center;
+}
+.manifesto-grid>div:first-child{
+  position:relative;
+  z-index:1;
+}
+.manifesto-grid h2{
+  max-width:7.2ch;
+  font-size:clamp(68px,7.8vw,138px);
+  line-height:.79;
+  letter-spacing:-.065em;
+  color:#17201b;
+}
+.manifesto-copy{
+  position:relative;
+  z-index:1;
+  max-width:540px;
+  gap:34px;
+  padding:clamp(28px,3vw,42px);
+  border:1px solid rgba(20,25,22,.12);
+  border-radius:var(--nodo-radius);
+  background:rgba(247,243,235,.58);
+  backdrop-filter:blur(10px);
+  box-shadow:0 26px 80px rgba(36,48,41,.07);
+  font-size:16px;
+  color:#465049;
+}
+.manifesto-copy>p:first-child{
+  margin:0;
+  font-size:clamp(16px,1.35vw,19px);
+  line-height:1.76;
+}
+.manifesto-copy .note{
+  margin:0;
+  padding-top:22px;
+  color:#59675e;
+}
+
+/* Signature — more spatial and less "black section" */
+.signature{
+  isolation:isolate;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 77% 36%,rgba(109,139,119,.24),transparent 24%),
+    radial-gradient(circle at 11% 80%,rgba(223,110,90,.10),transparent 26%),
+    linear-gradient(128deg,#0c1210 0%,#111b17 48%,#24332c 100%);
+  padding-top:clamp(74px,8vw,122px);
+  padding-bottom:clamp(74px,8vw,122px);
+}
+.signature:before{
+  content:"";
+  position:absolute;
+  z-index:0;
+  inset:0;
+  opacity:.28;
+  background:
+    linear-gradient(rgba(241,237,228,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(241,237,228,.035) 1px,transparent 1px);
+  background-size:72px 72px;
+  mask-image:linear-gradient(90deg,transparent 0,#000 20%,#000 100%);
+  pointer-events:none;
+}
+.signature-copy,
+.relationship-stage{
+  position:relative;
+  z-index:1;
+}
+.signature-copy{
+  min-height:720px;
+  padding-right:clamp(0px,2vw,26px);
+}
+.signature h2{
+  max-width:5.8ch;
+  font-size:clamp(66px,6.5vw,112px);
+  line-height:.82;
+  letter-spacing:-.06em;
+}
+.signature-intro{
+  max-width:37ch;
+  font-size:15px;
+  color:#cbd1cb;
+}
+.phase-list{
+  border-top-color:rgba(241,237,228,.15);
+}
+.phase{
+  padding:18px 0;
+  border-bottom-color:rgba(241,237,228,.14);
+  transition:padding .25s ease,color .25s ease,border-color .25s ease;
+}
+.phase:hover,
+.phase:focus-visible{
+  padding-left:8px;
+  border-bottom-color:rgba(241,237,228,.35);
+}
+.phase.is-active{
+  color:#f08a76;
+}
+.relationship-stage{
+  min-height:720px;
+  border-color:rgba(241,237,228,.15);
+  border-radius:34px;
+  background:
+    radial-gradient(circle at 50% 45%,rgba(111,139,120,.28),transparent 31%),
+    radial-gradient(circle at 50% 55%,#27332c 0,#17201b 52%,#0d1310 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.015),
+    0 40px 100px rgba(0,0,0,.26);
+}
+.relationship-stage:after{
+  inset:12%;
+  border-color:rgba(241,237,228,.07);
+  box-shadow:
+    0 0 0 42px rgba(241,237,228,.012),
+    0 0 0 96px rgba(241,237,228,.008);
+}
+.signature-hint{color:#aeb8b0}
+.phase b{color:#aeb8b0}
+.relationship-stage:before{color:#aeb8b0}
+.stage-caption{
+  left:26px;
+  right:26px;
+  bottom:22px;
+  color:#b8c1ba;
+}
+
+/* 02 / Treatments — indexed clinical catalogue */
+#trattamenti{
+  background:
+    radial-gradient(circle at 10% 18%,rgba(223,110,90,.075),transparent 19%),
+    var(--nodo-paper);
+  padding-top:clamp(116px,13vw,205px);
+  padding-bottom:clamp(120px,14vw,215px);
+}
+#trattamenti .section-head{
+  grid-template-columns:minmax(0,1.1fr) minmax(280px,.48fr);
+  gap:clamp(54px,9vw,150px);
+}
+#trattamenti .section-head h2{
+  max-width:7ch;
+  font-size:clamp(66px,7vw,122px);
+  line-height:.82;
+  letter-spacing:-.06em;
+}
+#trattamenti .section-head>p{
+  padding-top:20px;
+  border-top:1px solid var(--nodo-line);
+  font-size:15px;
+}
+.treatments-grid{
+  grid-template-columns:repeat(12,1fr);
+  gap:14px;
+  margin-top:clamp(62px,8vw,116px);
+}
+.treatment-card{
+  grid-column:span 3;
+  min-height:470px;
+  padding:28px;
+  border:1px solid rgba(20,25,22,.08);
+  border-radius:22px;
+  overflow:hidden;
+  position:relative;
+  justify-content:flex-start;
+  gap:24px;
+  background:#e8e3d9;
+  box-shadow:0 18px 50px rgba(30,40,34,.035);
+}
+.treatment-card:before{
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  right:-110px;
+  top:-100px;
+  border:1px solid rgba(20,25,22,.12);
+  transition:transform .45s var(--ease),opacity .45s var(--ease);
+}
+.treatment-card:hover,
+.treatment-card:focus-visible{
+  transform:translateY(-9px);
+}
+.treatment-card:hover:before,
+.treatment-card:focus-visible:before{
+  transform:scale(1.18);
+  opacity:.55;
+}
+.treatment-card:nth-child(2){
+  background:
+    radial-gradient(circle at 75% 18%,rgba(9,16,12,.18),transparent 30%),
+    linear-gradient(155deg,#52675b 0%,#34473d 100%);
+  color:#f3efe7;
+}
+.treatment-card:nth-child(2) p,
+.treatment-card:nth-child(2) .micro{
+  opacity:1;
+}
+.treatment-card:nth-child(3){
+  background:
+    linear-gradient(145deg,#eee4da 0%,#e6d4ca 100%);
+}
+.treatment-card:nth-child(4){
+  background:
+    radial-gradient(circle at 80% 15%,rgba(223,110,90,.20),transparent 28%),
+    linear-gradient(145deg,#121a16 0%,#24332c 100%);
+  color:#f3efe7;
+}
+.treatment-card h3{
+  margin-top:auto;
+  max-width:8.8ch;
+  font-size:clamp(34px,2.8vw,48px);
+  line-height:.91;
+  letter-spacing:-.045em;
+}
+.treatment-card p{
+  margin:0;
+  max-width:29ch;
+  color:inherit;
+  opacity:.78;
+  font-size:13px;
+}
+.treatment-card .micro{
+  min-height:18px;
+}
+.treatment-card:nth-child(1) .micro,
+.treatment-card:nth-child(3) .micro{
+  color:#59665e;
+}
+
+/* 03 / First visit — process as calm sequence */
+.first-visit{
+  background:
+    radial-gradient(circle at 9% 18%,rgba(255,255,255,.32),transparent 22%),
+    linear-gradient(130deg,#d6ddd6 0%,#ece8de 52%,#ded8cc 100%);
+  border-top:0;
+  padding-top:clamp(105px,12vw,190px);
+  padding-bottom:clamp(105px,12vw,190px);
+}
+.first-grid{
+  grid-template-columns:minmax(0,.84fr) minmax(0,1.16fr);
+  gap:clamp(70px,10vw,170px);
+  align-items:start;
+}
+.first-grid>div:first-child{
+  position:sticky;
+  top:calc(var(--header) + 44px);
+}
+.first-grid h2{
+  max-width:7.2ch;
+  font-size:clamp(65px,6.6vw,116px);
+  line-height:.82;
+  letter-spacing:-.058em;
+}
+.steps{
+  border-top:1px solid rgba(20,25,22,.18);
+}
+.step{
+  grid-template-columns:66px 1fr;
+  gap:26px;
+  padding:30px 0 31px;
+  border-bottom-color:rgba(20,25,22,.16);
+}
+.step>.micro{
+  width:46px;
+  height:46px;
+  border:1px solid rgba(20,25,22,.22);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+}
+.step h3{
+  font:400 clamp(25px,2.15vw,36px)/1.05 var(--serif);
+  letter-spacing:-.035em;
+}
+.step p{
+  margin-top:10px;
+  max-width:48ch;
+  font-size:14px;
+  color:#4c5750;
+}
+
+/* 04 / Human — image and copy become one editorial field */
+.human{
+  min-height:92svh;
+  padding:0;
+  gap:0;
+  grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);
+  background:var(--nodo-night);
+  color:var(--nodo-paper);
+  border-top:0;
+}
+.human-media{
+  min-height:92svh;
+  margin:0;
+  position:relative;
+  background:#34463d;
+}
+.human-media:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,transparent 58%,rgba(13,20,17,.34)),
+    linear-gradient(180deg,transparent 62%,rgba(13,20,17,.32));
+  pointer-events:none;
+}
+.human-media img{
+  filter:saturate(.63) contrast(1.055) brightness(.78);
+}
+.human-copy{
+  min-height:92svh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  padding:clamp(70px,8vw,135px) clamp(32px,6vw,100px);
+  background:
+    radial-gradient(circle at 76% 22%,rgba(124,141,130,.18),transparent 23%),
+    linear-gradient(145deg,#111915 0%,#18251f 100%);
+}
+.human-copy .micro{
+  color:#aab6ad;
+}
+.human-copy h2{
+  max-width:7.4ch;
+  font-size:clamp(62px,6vw,108px);
+  line-height:.83;
+  letter-spacing:-.058em;
+  color:#f2eee6;
+}
+.human-copy p{
+  max-width:42ch;
+  color:#cbd1cb;
+  font-size:16px;
+}
+.human-copy .arrow-link{
+  margin-top:28px;
+  color:#f2eee6;
+}
+
+/* Closing — premium dark call to action, not a flat promo band */
+.closing{
+  isolation:isolate;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 16% 70%,rgba(223,110,90,.34),transparent 27%),
+    radial-gradient(circle at 85% 20%,rgba(124,141,130,.24),transparent 24%),
+    linear-gradient(120deg,#111814 0%,#26362e 58%,#151e19 100%);
+  color:#f3efe7;
+  padding-top:clamp(100px,11vw,175px);
+  padding-bottom:clamp(100px,11vw,175px);
+}
+.closing:before{
+  content:"";
+  position:absolute;
+  z-index:0;
+  width:min(44vw,650px);
+  aspect-ratio:1;
+  left:-14vw;
+  bottom:-55%;
+  border:1px solid rgba(243,239,231,.12);
+  border-radius:50%;
+  box-shadow:
+    0 0 0 60px rgba(243,239,231,.018),
+    0 0 0 130px rgba(243,239,231,.01);
+  pointer-events:none;
+}
+.closing>*{
+  position:relative;
+  z-index:1;
+}
+.closing h2{
+  max-width:7.2ch;
+  font-size:clamp(72px,7.6vw,136px);
+  line-height:.79;
+  letter-spacing:-.065em;
+}
+.closing>div{
+  max-width:520px;
+}
+.closing p{
+  color:#d0d7d1;
+  font-size:15px;
+}
+.closing .pill{
+  background:#f3efe7;
+  border-color:#f3efe7;
+  color:#111814;
+}
+.closing .pill:hover,
+.closing .pill:focus-visible{
+  background:transparent;
+  color:#f3efe7;
+  border-color:rgba(243,239,231,.72);
+}
+
+/* Footer continuity */
+.footer{
+  background:#090e0c;
+  padding-top:78px;
+}
+.footer-top{
+  align-items:start;
+}
+.footer-brand{
+  color:#f1ede4;
+  font-size:clamp(80px,9.4vw,164px);
+}
+.footer h3,
+.footer h4{
+  color:#8f9b93;
+  font:500 9px/1 var(--mono);
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  margin:0 0 18px;
+}
+.footer a,
+.footer p{
+  color:#cbd1cb;
+}
+.footer a{
+  display:block;
+  width:max-content;
+  transition:opacity .2s ease;
+}
+.footer a:hover,
+.footer a:focus-visible{
+  opacity:.62;
+}
+.footer-bottom{
+  color:#98a199;
+}
+
+/* Keyboard/focus */
+.treatment-card:focus-visible,
+.phase:focus-visible,
+.arrow-link:focus-visible,
+.pill:focus-visible{
+  outline:2px solid #f08a76;
+  outline-offset:4px;
+}
+
+/* Mid-size */
+@media(max-width:1120px){
+  .treatment-card{grid-column:span 6;min-height:390px}
+  .human-copy h2{font-size:clamp(58px,6vw,86px)}
+}
+
+@media(max-width:900px){
+  #approccio .manifesto-grid,
+  #trattamenti .section-head,
+  .first-grid{
+    grid-template-columns:1fr;
+  }
+  .manifesto-copy{
+    width:min(100%,640px);
+    margin-left:auto;
+  }
+  .first-grid>div:first-child{
+    position:static;
+  }
+  .human{
+    grid-template-columns:1fr;
+  }
+  .human-media{
+    min-height:70svh;
+  }
+  .human-copy{
+    min-height:auto;
+  }
+}
+
+/* Mobile */
+@media(max-width:760px){
+  #approccio{
+    padding-top:94px;
+    padding-bottom:104px;
+  }
+  #approccio:before{
+    width:220px;
+    right:-130px;
+    bottom:44px;
+  }
+  .manifesto-grid h2{
+    font-size:clamp(57px,15vw,72px);
+  }
+  .manifesto-copy{
+    padding:24px 20px;
+    border-radius:20px;
+    font-size:15px;
+  }
+
+  .signature{
+    padding:78px 18px 24px;
+  }
+  .signature-copy{
+    padding-right:0;
+  }
+  .signature h2{
+    font-size:clamp(56px,15vw,72px);
+  }
+  .signature-intro{
+    font-size:14px;
+  }
+  .relationship-stage{
+    min-height:520px;
+    border-radius:22px;
+  }
+
+  #trattamenti{
+    padding-top:96px;
+    padding-bottom:104px;
+  }
+  #trattamenti .section-head h2{
+    font-size:clamp(57px,15vw,72px);
+  }
+  #trattamenti .section-head>p{
+    font-size:14px;
+  }
+  .treatments-grid{
+    grid-template-columns:1fr;
+    gap:12px;
+    margin-top:52px;
+  }
+  .treatment-card{
+    grid-column:auto;
+    min-height:310px;
+    border-radius:18px;
+  }
+  .treatment-card h3{
+    font-size:clamp(38px,11vw,48px);
+  }
+
+  .first-visit{
+    padding-top:94px;
+    padding-bottom:104px;
+  }
+  .first-grid h2{
+    font-size:clamp(57px,15vw,72px);
+  }
+  .step{
+    grid-template-columns:52px 1fr;
+    gap:18px;
+    padding:24px 0;
+  }
+  .step>.micro{
+    width:40px;
+    height:40px;
+  }
+  .step h3{
+    font-size:28px;
+  }
+
+  .human{
+    min-height:auto;
+  }
+  .human-media{
+    min-height:68svh;
+  }
+  .human-copy{
+    padding:86px 18px 92px;
+  }
+  .human-copy h2{
+    font-size:clamp(56px,15vw,72px);
+  }
+  .human-copy p{
+    font-size:15px;
+  }
+
+  .closing{
+    padding:96px 18px 102px;
+  }
+  .closing h2{
+    font-size:clamp(62px,16vw,80px);
+  }
+  .closing>div{
+    max-width:100%;
+  }
+
+  .footer{
+    padding-top:62px;
+  }
+}
+
+@media(max-width:390px){
+  .manifesto-grid h2,
+  #trattamenti .section-head h2,
+  .first-grid h2,
+  .human-copy h2{
+    font-size:54px;
+  }
+  .closing h2{
+    font-size:58px;
+  }
+  .treatment-card{
+    min-height:290px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .treatment-card,
+  .treatment-card:before,
+  .phase,
+  .arrow-link{
+    transition:none!important;
+  }
+}
+
+
+/* Final contrast hardening after Lighthouse mobile audit */
+.phase.is-active{color:#f08a76}
+.signature .micro{color:#b8c1ba}
+
+
+.treatment-card:nth-child(1) .micro,
+.treatment-card:nth-child(3) .micro{
+  opacity:1;
+}

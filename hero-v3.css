@@ -54,15 +54,14 @@
   pointer-events:none;
 }
 .hero:after{
-  content:"RELATION / FUNCTION / FORM";
+  content:"";
   position:absolute;
   z-index:3;
   right:var(--pad);
-  top:calc(var(--header) + 21px);
-  font:400 7px/1 var(--mono);
-  letter-spacing:.2em;
-  color:rgba(226,231,224,.46);
-  writing-mode:vertical-rl;
+  top:calc(var(--header) + 25px);
+  width:1px;
+  height:82px;
+  background:linear-gradient(to bottom,rgba(226,231,224,.62),rgba(226,231,224,0));
   pointer-events:none;
 }
 .hero-copy{

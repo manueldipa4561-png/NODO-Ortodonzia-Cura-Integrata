@@ -689,3 +689,9 @@ main{
 /* Final contrast hardening after Lighthouse mobile audit */
 .phase.is-active{color:#f08a76}
 .signature .micro{color:#b8c1ba}
+
+
+.treatment-card:nth-child(1) .micro,
+.treatment-card:nth-child(3) .micro{
+  opacity:1;
+}

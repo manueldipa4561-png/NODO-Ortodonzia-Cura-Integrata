@@ -1,0 +1,102 @@
+/* NODO — 404 V2 / Dislocated Node */
+html,body{min-height:100%}
+body.error-page{
+  --e-ink:#0c1310;
+  --e-paper:#f1ede5;
+  --e-sage:#7f9386;
+  --e-coral:#df725e;
+  position:relative;
+  min-height:100svh;
+  padding:clamp(26px,3vw,48px) var(--pad) clamp(28px,3vw,44px);
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 82% 18%,rgba(127,147,134,.24),transparent 22%),
+    radial-gradient(circle at 17% 84%,rgba(223,114,94,.16),transparent 24%),
+    linear-gradient(135deg,#0a100d 0%,#111b16 47%,#26372e 100%);
+  color:var(--e-paper);
+}
+body.error-page:before{
+  content:"404";
+  position:absolute;
+  z-index:0;
+  right:-.055em;
+  bottom:-.18em;
+  font:400 clamp(260px,38vw,620px)/.72 var(--serif);
+  letter-spacing:-.09em;
+  color:rgba(241,237,229,.035);
+  pointer-events:none;
+}
+body.error-page:after{
+  content:"";
+  position:absolute;
+  z-index:0;
+  width:min(42vw,620px);
+  aspect-ratio:1;
+  right:10vw;
+  top:50%;
+  transform:translateY(-50%);
+  border:1px solid rgba(241,237,229,.10);
+  border-radius:50%;
+  box-shadow:
+    0 0 0 54px rgba(241,237,229,.014),
+    0 0 0 116px rgba(241,237,229,.008);
+  pointer-events:none;
+}
+.error-page>.micro,
+.error-page main,
+.error-page .error-link{
+  position:relative;
+  z-index:1;
+}
+.error-page>.micro{
+  color:#b5c0b8!important;
+  opacity:1;
+}
+.error-page main{
+  width:100%;
+  display:flex;
+  flex:1;
+  align-items:center;
+}
+.error-page h1{
+  max-width:8.2ch;
+  margin:0;
+  font-size:clamp(92px,12vw,215px);
+  line-height:.73;
+  letter-spacing:-.075em;
+  color:#f3efe7;
+  text-wrap:balance;
+}
+.error-page h1:after{
+  content:"";
+  display:block;
+  width:clamp(74px,9vw,148px);
+  height:2px;
+  margin-top:clamp(38px,5vw,70px);
+  background:var(--e-coral);
+}
+.error-page .error-link{
+  align-self:flex-end;
+  color:#edf0ec;
+  font-size:10px;
+}
+.error-page .error-link:focus-visible{
+  outline:2px solid #df725e;
+  outline-offset:5px;
+}
+@media(max-width:760px){
+  body.error-page{
+    padding:24px 18px 28px;
+  }
+  body.error-page:after{
+    width:76vw;
+    right:-30vw;
+  }
+  body.error-page:before{
+    right:-.08em;
+    font-size:clamp(210px,75vw,330px);
+  }
+  .error-page h1{
+    font-size:clamp(78px,24vw,112px);
+  }
+}

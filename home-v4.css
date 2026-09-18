@@ -193,11 +193,14 @@ main{
     0 0 0 42px rgba(241,237,228,.012),
     0 0 0 96px rgba(241,237,228,.008);
 }
+.signature-hint{color:#aeb8b0}
+.phase b{color:#aeb8b0}
+.relationship-stage:before{color:#aeb8b0}
 .stage-caption{
   left:26px;
   right:26px;
   bottom:22px;
-  color:#aeb8b0;
+  color:#b8c1ba;
 }
 
 /* 02 / Treatments — indexed clinical catalogue */
@@ -263,7 +266,7 @@ main{
 }
 .treatment-card:nth-child(2){
   background:
-    radial-gradient(circle at 75% 18%,rgba(239,244,239,.14),transparent 28%),
+    radial-gradient(circle at 75% 18%,rgba(9,16,12,.18),transparent 30%),
     linear-gradient(155deg,#52675b 0%,#34473d 100%);
   color:#f3efe7;
 }
@@ -504,7 +507,7 @@ main{
   opacity:.62;
 }
 .footer-bottom{
-  color:#77827a;
+  color:#98a199;
 }
 
 /* Keyboard/focus */

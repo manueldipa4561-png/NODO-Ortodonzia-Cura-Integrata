@@ -684,3 +684,8 @@ main{
     transition:none!important;
   }
 }
+
+
+/* Final contrast hardening after Lighthouse mobile audit */
+.phase.is-active{color:#f08a76}
+.signature .micro{color:#b8c1ba}

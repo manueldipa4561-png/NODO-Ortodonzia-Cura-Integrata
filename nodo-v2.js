@@ -79,8 +79,7 @@ document.querySelectorAll('[data-select-group]').forEach(group=>{
   }));
 });
 
-document.querySelector('[data-demo-form]')?.addEventListener('submit',e=>{
-  e.preventDefault();
+document.querySelector('[data-demo-submit]')?.addEventListener('click',e=>{
   const panel=e.currentTarget.closest('.contact-panel');
   if(panel)panel.innerHTML='<p class="micro">DEMO PORTFOLIO</p><h2>Richiesta simulata.</h2><p class="lede">Nessun dato è stato inviato o salvato. In un progetto reale il flusso verrebbe collegato al sistema scelto dallo studio e revisionato per privacy, sicurezza e conformità.</p><a class="pill" href="./">Torna alla home</a>';
 });

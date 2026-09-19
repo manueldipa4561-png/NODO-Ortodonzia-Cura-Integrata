@@ -1,43 +1,24 @@
-<!doctype html>
-<html lang="it">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="robots" content="noindex,nofollow">
-  <meta name="description" content="Richiedi un incontro — NODO concept portfolio. Flusso dimostrativo orientation-first; nessun dato viene inviato.">
-  <title>Richiedi un incontro — NODO</title>
-  <link rel="stylesheet" href="./nodo-v2.css?v=20260919">
-  <script type="module" src="./nodo-v2.js?v=20260919"></script>
-</head>
-<body>
-<a class="skip" href="#main">Salta al contenuto</a>
-<header class="site-header">
-  <a class="brand" href="./"><strong>NODO</strong><small>ORTODONZIA / CURA INTEGRATA</small></a>
-  <nav class="nav" aria-label="Principale"><a href="./orientarsi.html">Orientarsi</a><a href="./prima-visita.html">Prima visita</a><a href="./guida.html">NODO Guide</a><a href="./studio.html">Studio</a></nav>
-  <a class="header-action" href="./">Home</a>
-  <button class="menu-trigger" data-menu-trigger aria-controls="mobile-menu" aria-expanded="false">MENU</button>
-</header>
-<nav class="mobile-menu" id="mobile-menu" aria-hidden="true"><a href="./">Home</a><a href="./orientarsi.html">Orientarsi</a><a href="./prima-visita.html">Prima visita</a><a href="./guida.html">NODO Guide</a><a href="./studio.html">Studio</a></nav>
-<main id="main" class="contact-v2">
-  <section class="contact-copy-v2">
-    <p class="micro">RICHIESTA DI CONTATTO / DEMO</p>
-    <h1 class="display">Parti da ciò che vuoi capire.</h1>
-    <p class="lede">Non chiediamo una diagnosi o il trattamento che pensi di volere. Il flusso raccoglie solo il minimo necessario per simulare un primo contatto.</p>
-    <p class="copy">Questa esperienza è dimostrativa: nessun dato viene inviato, salvato o utilizzato e nessun appuntamento viene confermato.</p>
-  </section>
-  <section class="contact-panel" aria-labelledby="contact-title">
-    <p class="micro">ORIENTATION-FIRST INTAKE</p>
-    <h2 id="contact-title">Una richiesta breve.</h2>
-    <div data-demo-form role="form" aria-labelledby="contact-title">
-      <div class="field-v2"><span class="micro">SEI</span><div class="choice-grid-v2" data-select-group><button class="choice-v2" type="button" aria-pressed="false">Nuovo paziente</button><button class="choice-v2" type="button" aria-pressed="false">Paziente già seguito</button></div></div>
-      <div class="field-v2"><span class="micro">IL CONTATTO RIGUARDA</span><div class="choice-grid-v2" data-select-group><button class="choice-v2" type="button" aria-pressed="false">Me</button><button class="choice-v2" type="button" aria-pressed="false">Mio figlio / mia figlia</button></div></div>
-      <div class="field-v2"><span class="micro">VORREI CAPIRE</span><div class="choice-grid-v2" data-select-group><button class="choice-v2" type="button" aria-pressed="false">Prima visita</button><button class="choice-v2" type="button" aria-pressed="false">Possibili percorsi</button><button class="choice-v2" type="button" aria-pressed="false">Trattamento in corso</button><button class="choice-v2" type="button" aria-pressed="false">Non lo so ancora</button></div></div>
-      <div class="field-v2"><label for="name">Nome</label><input id="name" name="name" autocomplete="off"></div>
-      <div class="field-v2"><label for="contact">Email o telefono</label><input id="contact" name="contact" autocomplete="off"></div>
-      <div class="field-v2"><label for="message">Una domanda, se vuoi</label><textarea id="message" name="message" placeholder="Non inserire dati sanitari reali in questa demo."></textarea></div>
-      <p class="demo-note">Demo portfolio: non inserire informazioni sanitarie reali. I dati non vengono trasmessi né salvati.</p>
-      <button class="pill" type="button" data-demo-submit>Simula richiesta</button>
-    </div>
-  </section>
+<!doctype html><html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Prenota una prima visita — NODO concept portfolio."><title>Prenota una prima visita — NODO</title><link rel="stylesheet" href="./nodo-v3.css?v=20260919"><script type="module" src="./nodo-v3.js?v=20260919"></script></head><body>
+<a class="skip-link" href="#main">Salta al contenuto</a>
+<header class="site-header"><a class="brand" href="./"><strong>NODO</strong><small>ORTODONZIA CONTEMPORANEA</small></a><nav class="nav" aria-label="Principale"><a href="./prima-visita.html">Prima visita</a><a href="./trattamenti.html">Percorsi</a><a href="./studio.html">Studio</a><a href="./guida.html">Guida</a></nav><a class="cta" href="./">Home</a><button class="menu-toggle" type="button" data-menu-toggle aria-controls="mobile-panel" aria-expanded="false">MENU</button></header>
+<nav id="mobile-panel" class="mobile-panel" aria-hidden="true"><a href="./">Home</a><a href="./prima-visita.html">Prima visita</a><a href="./trattamenti.html">Percorsi</a><a href="./studio.html">Studio</a><a href="./guida.html">Guida</a></nav>
+<main id="main" class="contact-layout">
+<section class="contact-copy">
+  <p class="kicker">PRIMA VISITA / DEMO</p>
+  <h1 class="display">Parti da ciò che vuoi capire.</h1>
+  <p class="lede">Non serve scegliere un trattamento prima di contattare lo studio.</p>
+  <p class="copy">Questa è una simulazione portfolio. Nessun dato viene inviato, memorizzato o utilizzato.</p>
+</section>
+<section class="contact-form" role="form" aria-labelledby="contact-title">
+  <p class="kicker">RICHIESTA DI CONTATTO</p>
+  <h2 id="contact-title">Una richiesta breve.</h2>
+  <div class="field"><label for="topic">Vorrei capire</label><select id="topic"><option>Prima visita</option><option>Un possibile percorso</option><option>Informazioni per mio figlio / mia figlia</option><option>Non lo so ancora</option></select></div>
+  <div class="field"><label for="name">Nome</label><input id="name" autocomplete="off"></div>
+  <div class="field"><label for="contact">Email o telefono</label><input id="contact" autocomplete="off"></div>
+  <div class="field"><label for="message">Una domanda, se vuoi</label><textarea id="message" placeholder="Non inserire dati sanitari reali in questa demo."></textarea></div>
+  <p class="form-note">Demo portfolio: non inserire informazioni sanitarie reali. Nessun dato viene trasmesso.</p>
+  <button class="cta-light" type="button" data-demo-contact>Simula richiesta</button>
+</section>
 </main>
-<footer class="footer-v2"><span>NESSUN DATO VIENE INVIATO / DEMO PORTFOLIO</span><span>PUNTO DUE STUDIO / NODO v2</span></footer>
+<footer class="site-footer"><div><div class="brand"><strong>NODO</strong><small>CONCEPT PROJECT</small></div><p class="footer-note">Concept portfolio fittizio di Punto Due Studio.</p></div><div class="footer-links kicker"><a href="./">Home</a><a href="./prima-visita.html">Prima visita</a></div></footer>
 </body></html>

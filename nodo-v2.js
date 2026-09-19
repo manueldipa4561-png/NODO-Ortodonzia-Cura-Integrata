@@ -1,13 +1,51 @@
 const body=document.body, html=document.documentElement;
 const menuButton=document.querySelector('[data-menu-trigger]');
 const menu=document.getElementById('mobile-menu');
+const main=document.querySelector('main');
+const footer=document.querySelector('.footer-v2');
+const headerInactive=[...document.querySelectorAll('.site-header > *:not(.menu-trigger)')];
 let lockedY=0;
-function lock(){lockedY=scrollY;body.classList.add('menu-open');Object.assign(body.style,{position:'fixed',top:`-${lockedY}px`,left:'0',right:'0',width:'100%'});html.style.overflow='hidden'}
-function unlock(){body.classList.remove('menu-open');Object.assign(body.style,{position:'',top:'',left:'',right:'',width:''});html.style.overflow='';scrollTo(0,lockedY)}
-function closeMenu(){if(!body.classList.contains('menu-open'))return;menu?.setAttribute('aria-hidden','true');menuButton?.setAttribute('aria-expanded','false');unlock()}
-menuButton?.addEventListener('click',()=>{if(body.classList.contains('menu-open'))return closeMenu();menu?.setAttribute('aria-hidden','false');menuButton.setAttribute('aria-expanded','true');lock()});
-menu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
-addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+function setBackgroundInert(on){
+  [main,footer,...headerInactive].forEach(el=>{if(!el)return;if(on)el.setAttribute('inert','');else el.removeAttribute('inert')});
+}
+function lock(){
+  lockedY=scrollY;
+  body.classList.add('menu-open');
+  Object.assign(body.style,{position:'fixed',top:`-${lockedY}px`,left:'0',right:'0',width:'100%'});
+  html.style.overflow='hidden';
+  setBackgroundInert(true);
+  requestAnimationFrame(()=>menu?.querySelector('a')?.focus());
+}
+function unlock(){
+  body.classList.remove('menu-open');
+  Object.assign(body.style,{position:'',top:'',left:'',right:'',width:''});
+  html.style.overflow='';
+  setBackgroundInert(false);
+  scrollTo(0,lockedY);
+}
+function closeMenu({restoreFocus=true}={}){
+  if(!body.classList.contains('menu-open'))return;
+  menu?.setAttribute('aria-hidden','true');
+  menuButton?.setAttribute('aria-expanded','false');
+  unlock();
+  if(restoreFocus)requestAnimationFrame(()=>menuButton?.focus());
+}
+menuButton?.addEventListener('click',()=>{
+  if(body.classList.contains('menu-open'))return closeMenu();
+  menu?.setAttribute('aria-hidden','false');
+  menuButton.setAttribute('aria-expanded','true');
+  lock();
+});
+menu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>closeMenu({restoreFocus:false})));
+addEventListener('keydown',e=>{
+  if(e.key==='Escape')return closeMenu();
+  if(e.key!=='Tab'||!body.classList.contains('menu-open'))return;
+  const focusables=[menuButton,...(menu?[...menu.querySelectorAll('a')]:[])].filter(Boolean);
+  if(!focusables.length)return;
+  const first=focusables[0],last=focusables[focusables.length-1],active=document.activeElement;
+  if(e.shiftKey&&active===first){e.preventDefault();last.focus()}
+  else if(!e.shiftKey&&active===last){e.preventDefault();first.focus()}
+});
 
 const world=document.querySelector('[data-orientation-world]');
 const cards=[...document.querySelectorAll('[data-orientation-card]')];

@@ -27,16 +27,16 @@
   <section class="contact-panel" aria-labelledby="contact-title">
     <p class="micro">ORIENTATION-FIRST INTAKE</p>
     <h2 id="contact-title">Una richiesta breve.</h2>
-    <form data-demo-form>
+    <div data-demo-form role="form" aria-labelledby="contact-title">
       <div class="field-v2"><span class="micro">SEI</span><div class="choice-grid-v2" data-select-group><button class="choice-v2" type="button" aria-pressed="false">Nuovo paziente</button><button class="choice-v2" type="button" aria-pressed="false">Paziente già seguito</button></div></div>
       <div class="field-v2"><span class="micro">IL CONTATTO RIGUARDA</span><div class="choice-grid-v2" data-select-group><button class="choice-v2" type="button" aria-pressed="false">Me</button><button class="choice-v2" type="button" aria-pressed="false">Mio figlio / mia figlia</button></div></div>
       <div class="field-v2"><span class="micro">VORREI CAPIRE</span><div class="choice-grid-v2" data-select-group><button class="choice-v2" type="button" aria-pressed="false">Prima visita</button><button class="choice-v2" type="button" aria-pressed="false">Possibili percorsi</button><button class="choice-v2" type="button" aria-pressed="false">Trattamento in corso</button><button class="choice-v2" type="button" aria-pressed="false">Non lo so ancora</button></div></div>
-      <div class="field-v2"><label for="name">Nome</label><input id="name" name="name" autocomplete="name" required></div>
-      <div class="field-v2"><label for="contact">Email o telefono</label><input id="contact" name="contact" required></div>
+      <div class="field-v2"><label for="name">Nome</label><input id="name" name="name" autocomplete="off"></div>
+      <div class="field-v2"><label for="contact">Email o telefono</label><input id="contact" name="contact" autocomplete="off"></div>
       <div class="field-v2"><label for="message">Una domanda, se vuoi</label><textarea id="message" name="message" placeholder="Non inserire dati sanitari reali in questa demo."></textarea></div>
       <p class="demo-note">Demo portfolio: non inserire informazioni sanitarie reali. I dati non vengono trasmessi né salvati.</p>
-      <button class="pill" type="submit">Simula richiesta</button>
-    </form>
+      <button class="pill" type="button" data-demo-submit>Simula richiesta</button>
+    </div>
   </section>
 </main>
 <footer class="footer-v2"><span>NESSUN DATO VIENE INVIATO / DEMO PORTFOLIO</span><span>PUNTO DUE STUDIO / NODO v2</span></footer>
